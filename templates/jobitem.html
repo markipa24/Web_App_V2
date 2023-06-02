@@ -1,0 +1,15 @@
+<div class="border-bottom" style="margin-bottom:16px; padding-bottom:8px;">
+  <h5 style="color:rgb(250,0,0")>
+    {{jobs['title']}}
+  </h5>
+  <div style="margin-bottom; 4px;">
+    <b>Location:</b> {{jobs['location']}}
+  </div>
+
+  {% if 'salary' in jobs %}              
+    <div style="margin-bottom; 4px;">
+      <b>Salary:</b> {{jobs['salary']}}
+    </div>
+  {% endif %}
+              
+</div>
