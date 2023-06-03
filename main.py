@@ -22,8 +22,15 @@ JOBS = [
       'title': 'Project Manager',
       'location': 'Australia',
       'salary': 'P150,000'
+    },
+    {
+      'id':4,
+      'title': 'Senior Structural Engineer',
+      'location':'UAE',
+      'salary': 'P450,000'
     }
-]
+  ]
+
 
 @app.route("/")
 
