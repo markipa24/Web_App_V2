@@ -26,6 +26,7 @@ engine = create_engine(db_connection_string,
 #result_dicts.append(result_all[row]._asdict())
 #print(result_dicts)
 
+
 def load_jobs_from_db():
   with engine.connect() as conn:
     result = conn.execute(text("select * from mmi.jobs01"))
@@ -34,3 +35,16 @@ def load_jobs_from_db():
     for row in range(0, len(result_all)):
       jobs.append(result_all[row]._asdict())
     return jobs
+
+
+def load_job_from_db(id):
+  with engine.connect() as conn:
+    result = conn.execute(text("SELECT * FROM mmi.jobs01 WHERE id = :val"),
+                          {"val": id})
+  rows = result.all()
+  if len(rows) == 0:
+    return None
+  else:
+    return rows[0]._asdict()
+
+

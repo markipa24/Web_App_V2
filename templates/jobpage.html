@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>{{jobs.title}}Job Page</title>
+  {% include 'bootstrap.html' %}
+  
+</head>
+<body>
+  {% include 'nav.html' %}
+  {% include 'banner.html' %}
+    <div class="container">
+        <h1 class="text-center">
+         {{company_name}} Time to Shift
+        </h1>
+        <h3 class="mb-2">{{jobs.title}}</h3>
+        <p>{{jobs.location}}</p>
+        <h4>Responsibilites</h4>
+        <ul>
+          {% for line in jobs.responsibilities.split(". ") %}
+            <li>{{line}}</li>
+          {% endfor %}
+        </ul>
+          
+        <h4>Requirements</h4>
+        <ol>
+          {% for line in jobs.requirements.split(". ") %}
+           <li>{{line}}</li>
+          {% endfor %}
+        </ol>
+        <p>{{jobs.requirements}}</p>
+        <h4>Salary</h4>
+        <p>{{jobs.currency}} {{jobs.salary}}</p>
+
+    </div>
+{% include 'footer.html' %}
+</body>
+</html>
